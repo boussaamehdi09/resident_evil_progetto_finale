@@ -257,7 +257,7 @@
             while (terminaGioco == false)
             {
                 MostraStatus(nomePersonaggio, puntiVita, forzaAttacco, probFuga, indiceMappaCorrente, mappa, bonusCavallo);
-                // scelta del utente( avanzare , mostrare staus , uscire)
+                // scelta del utente( avanzare , mostrare staus ,mostrare inventario, uscire)
                 Console.WriteLine("\n======================================");
                 Console.WriteLine("Scegli un'azione: ");
                 Console.WriteLine("======================================");
@@ -291,14 +291,12 @@
 
                         // Il combattimento main
                         Combattimento(ref puntiVita, ref forzaAttacco, probFuga);
-
-                        //  bonus dopo il Combattimento
                         int eventoBonus = generatoreCasuale.Next(0, 3);
 
                         if (eventoBonus == 0)
                         {
                             bonusCavallo = true;
-                            Console.WriteLine("Trovata Adrenalina! Prossimo tiro avanzerai più velocemente.");
+                            Console.WriteLine("Trovato un cavallo ! Prossimo tiro avanzerai più velocemente.");
                         }
                         else if (eventoBonus == 1)
                         {
